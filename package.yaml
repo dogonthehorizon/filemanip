@@ -1,0 +1,35 @@
+name: filemanip
+version: '0.3.6.3'
+synopsis: Expressive file and directory manipulation for Haskell.
+description: ! 'A Haskell library for working with files and directories.
+
+  Includes code for pattern matching, finding files,
+
+  modifying file contents, and more.'
+category: System
+author: Bryan O'Sullivan <bos@serpentine.com>
+maintainer: Bryan O'Sullivan
+license: BSD3
+homepage: https://github.com/bos/filemanip
+git: git://github.com/bos/filemanip.git
+bug-reports: https://github.com/bos/filemanip/issues
+extra-source-files:
+- README.markdown
+dependencies:
+- base <5
+- bytestring
+- directory
+- filepath
+- mtl
+- unix-compat
+library:
+  ghc-options: -Wall
+  exposed-modules:
+  - System.FilePath.Find
+  - System.FilePath.Glob
+  - System.FilePath.GlobPattern
+  - System.FilePath.Manip
+  when:
+  - condition: impl(ghc >=6.10)
+    dependencies:
+    - base >=4
